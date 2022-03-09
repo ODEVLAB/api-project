@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+// use App\Models\Task;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -15,5 +16,6 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
         \App\Models\Student::factory(50)->create();
+        \App\Models\Task::factory(50)->create();
     }
 }
