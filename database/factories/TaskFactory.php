@@ -18,10 +18,10 @@ class TaskFactory extends Factory
     {
         return [
           'title'       =>   $this->faker->word,
-          'task_code'   =>   $this->faker->word-numberBetween(10,201),
+          'task_code'   =>   'tsk'.$this->faker->numberBetween(10,201),
           'description' =>   $this->faker->text(200),
           'status'      =>   $this->faker->numberBetween(0,1),
-          'deadline'    =>   $this->faker->unixTime(new DateTime('+3 weeks')),
+          'deadline'    =>   $this->faker->dateTimeBetween($startDate = '-30 years', $endDate = 'now', $timezone = null),
         ];
     }
 }

@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApiController;
+use App\Http\Controllers\TaskController;
 use App\Http\Controllers\UserController;
 
 /*
@@ -28,9 +29,11 @@ ROute::group(['prefix' => 'v1', 'middleware' => 'auth:sanctum'], function() {
     Route::delete('students/{id}',[ApiController::class, 'deleteStudent']);
     Route::get('students/search/{name}',[ApiController::class, 'search']);
 
+    Route::resource('tasks', TaskController::class);
+
 });
 
 
 
 //Login User
-Route::post("login", [UserController::class, 'index']);
+Route::post('login', [UserController::class, 'index']);
