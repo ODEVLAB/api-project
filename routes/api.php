@@ -20,7 +20,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-ROute::group(['prefix' => 'v1', 'middleware' => 'auth:sanctum'], function() {
+Route::group(['prefix' => 'v1', 'middleware' => 'auth:sanctum'], function() {
     Route::get('students', [ApiController::class, 'getAllStudents']);
     Route::get('students/{id}', [ApiController::class, 'getStudent']);
     Route::post('students', [ApiController::class, 'createStudent']);
