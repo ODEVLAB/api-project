@@ -29,7 +29,7 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:sanctum'], function() {
     Route::delete('students/{id}',[ApiController::class, 'deleteStudent']);
     Route::get('students/search/{name}',[ApiController::class, 'search']);
 
-    Route::resource('tasks', TaskController::class);
+    Route::apiResource('tasks', TaskController::class);
 
 });
 
